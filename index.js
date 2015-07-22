@@ -24,7 +24,7 @@ module.exports = function() {
   if(conf.notify === false) return this;
   return function notify(req, next) {
     var bail = conf.notify && conf.notify.bail === true;
-    var z, arg, j, list = [], name;
+    var z, arg, j, list = [], name, listeners;
     for(z in req.result.all) {
       arg = this._options[z];
       if(arg) {
